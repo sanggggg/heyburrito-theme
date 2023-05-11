@@ -109,19 +109,17 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #logo {
-  position: absolute;
-  top: 50%;
   left: 10px;
-  transform: translateY(-50%);
 }
 
 #filter {
-  width: 400px;
   margin-top: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #filter p {
@@ -182,12 +180,12 @@ body {
   width: var(--switch-handle-size);
   height: var(--switch-handle-size);
   border-radius: var(--switch-handle-size);
-  background: #f4c99d;
+  background: #f3f4f6;
   transition: left 0.3s, transform 0.3s, width 0.3s;
 }
 
 .c-switch__values:hover::after {
-  background: #deae7e;
+  background: #e5e7eb;
 }
 
 .c-switch__values:active::after {

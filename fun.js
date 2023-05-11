@@ -76,13 +76,10 @@ const burritoHost = window.location.hostname;
 
 let listType = getLocalStorage("listType") || "to";
 let scoreType = getLocalStorage("scoreType") || "inc";
-let userType = getLocalStorage("userType") || "member";
 
-const filteraSwitch = document.getElementById("switchToFromInput");
-const filtercSwitch = document.getElementById("switchUserTypesInput");
+const filterSwitch = document.getElementById("switchToFromInput");
 
-filteraSwitch.checked = listType === "to" ? true : false;
-filtercSwitch.checked = userType === "member" ? true : false;
+filterSwitch.checked = listType === "to" ? true : false;
 
 async function fetcher(type, { username, listType, scoreType }) {
     switch (type) {
@@ -115,7 +112,7 @@ const getScoreBoard = async () => {
 
 getScoreBoard();
 
-filteraSwitch.addEventListener("click", async (ev) => {
+filterSwitch.addEventListener("click", async (ev) => {
     const list = listType === "to" ? "from" : "to";
     listType = list;
     setLocalStorage("listType", list);
@@ -125,23 +122,8 @@ filteraSwitch.addEventListener("click", async (ev) => {
     render();
 });
 
-filtercSwitch.addEventListener("click", async (ev) => {
-    const memberType = userType === "member" ? "all" : "member";
-    userType = memberType;
-    setLocalStorage("userType", memberType);
-    store = await fetcher("scoreboard", { listType, scoreType });
-    sortUsers();
-    render();
-});
-
 function sortUsers(sort = false) {
-    let data;
-
-    if (userType === "member") {
-        data = store.filter((item) => item.memberType === userType);
-    } else {
-        data = store;
-    }
+    let data = store;
 
     if (sort) data.sort((a, b) => Math.sign(b.score - a.score));
 
@@ -205,29 +187,29 @@ function addUserInfo(user, container) {
     const html = `
 <div class="scoreboard__user__stats__column" >
 
-<div class="scoreboard__user__stats__title"><strong>Total</strong></div>
+<div class="scoreboard__user__stats__title"><strong>전체</strong></div>
   <ol class="scoreboard__user__stats__list">
     <li>
-      <strong>Received</strong>
+      <strong>받은 국밥</strong>
       <span class="score mini">${user.received}</span>
     </li>
     <li>
-      <strong>Given</strong>
+      <strong>준 국밥</strong>
       <span class="score mini">${user.given}</span>
     </li>
   </ol>
 </div>
 
 <div class="scoreboard__user__stats__column">
-  <div class="scoreboard__user__stats__title"><strong>Today</strong></div>
+  <div class="scoreboard__user__stats__title"><strong>오늘</strong></div>
 
   <ol class="scoreboard__user__stats__list">
     <li>
-      <strong>Received</strong>
+      <strong>받은 국밥</strong>
       <span class="score mini">${user.receivedToday}</span>
     </li>
     <li>
-      <strong>Given</strong>
+      <strong>준 국밥</strong>
       <span class="score mini">${user.givenToday}</span>
     </li>
   </ol>
@@ -329,13 +311,13 @@ function createElement(data, display) {
   <div class="scoreboard__user__stats__today">
 
     <div class="scoreboard__user__stats__column">
-<div class="scoreboard__user__stats__title"><strong>From ( Today )</strong></div>
+<div class="scoreboard__user__stats__title"><strong>오늘 받은 국밥</strong></div>
       <ol class="scoreboard__user__stats__list" data-today-from>
       </ol>
     </div>
 
     <div class="scoreboard__user__stats__column">
-      <strong class="scoreboard__user__stats__title">To ( Today )</strong>
+      <strong class="scoreboard__user__stats__title">오늘 준 국밥</strong>
       <ol class="scoreboard__user__stats__list" data-today-to>
       </ol>
     </div>
@@ -344,13 +326,13 @@ function createElement(data, display) {
 
 
   <div class="scoreboard__user__stats__column">
-    <strong class="scoreboard__user__stats__title">From</strong>
+    <strong class="scoreboard__user__stats__title">전체 받은 국밥</strong>
     <ol class="scoreboard__user__stats__list" data-from>
     </ol>
   </div>
 
   <div class="scoreboard__user__stats__column">
-    <strong class="scoreboard__user__stats__title">To</strong>
+    <strong class="scoreboard__user__stats__title">전체 준 국밥</strong>
     <ol class="scoreboard__user__stats__list" data-to>
     </ol>
   </div>
