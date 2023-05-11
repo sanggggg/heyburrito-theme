@@ -1,6 +1,6 @@
-const users = document.getElementById('users');
-const filter = document.getElementById('filter');
-    const rottenburrito = `<svg xmlns="http://www.w3.org/2000/svg" width="0.85em" viewBox="0 0 93 189">
+const users = document.getElementById("users");
+const filter = document.getElementById("filter");
+const rottenburrito = `<svg xmlns="http://www.w3.org/2000/svg" width="0.85em" viewBox="0 0 93 189">
                   <g fill="none" fill-rule="evenodd" transform="translate(1.742188 -6.878615)">
                     <g transform="translate(2.894531)">
                       <path fill="#B9CD2B" stroke="#000" stroke-width="3" d="M60.22369452 14.09588889c.08769317.19496398.11059906.41289936.0653575.62183537l-2.04128505 9.42649376 9.74451043 3.13171892c.52581225.16893785.81511605.732144.6461782 1.25795625-.06381661.19862653-.18815797.37232022-.3556113.49675681l-5.26787819 3.91383974 3.35160946 3.6062058c.37604758.40448323.35299599 1.03722842-.05148724 1.413276-.16467872.1531015-.37615027.24623477-.60027187.26436304l-8.62102762.69660495.0996039 12.67690775c.00429525.55226806-.43992441 1.00345179-.99219247 1.00774705-.22542404.00175328-.44482731-.07271234-.62261436-.21131553l-6.86736387-5.35429845-1.7937028 3.23015067c-.26818185.4828012-.87697388.65678455-1.359775.38860277-.19063406-.1058917-.34142876-.27119575-.42941118-.47072897l-2.4174445-5.4836632-10.79453279 3.88038843c-.5197331.1868045-1.092495-.08308745-1.27929943-.60282063-.07529005-.20947412-.07853783-.43808058-.00922889-.64960902l3.3289515-10.15954227-6.60227544-1.37771669c-.54062407-.11288954-.88737133-.642667-.77448173-1.18329115.04457444-.21346543.15770525-.40650931.32215746-.54972201l5.155653-4.49150471-5.12128074-7.20910418c-.31985639-.45023362-.2141648-1.07451498.23606882-1.39437136.17159454-.12190484.37728032-.18655518.58776122-.18474288l8.00953648.0679663-.99334966-7.6792362c-.0708991-.54771506.31563654-1.04920096.86335153-1.12009998.22299314-.02886545.4492071.01826528.64211866.13378254l7.82556673 4.68570487 5.13464294-7.57888954c.30973535-.45725545.93150411-.5768441 1.38875956-.26710875.19251387.13040485.33356662.32382099.39889535.5469783l1.95549066 6.67876758 5.91610142-2.66006736c.50367962-.22655087 1.09564839-.00189366 1.32219931.50178598z"/>
@@ -31,7 +31,7 @@ const filter = document.getElementById('filter');
                   </g>
                 </svg>`;
 
-    const burrito = `          <svg xmlns="http://www.w3.org/2000/svg" width="0.85em" viewBox="0 0 93 189">
+const burrito = `          <svg xmlns="http://www.w3.org/2000/svg" width="0.85em" viewBox="0 0 93 189">
                   <g fill="none" fill-rule="evenodd" transform="translate(1.742188 -6.878615)">
                     <g transform="translate(2.894531)">
                       <path fill="#B9CD2B" stroke="#000" stroke-width="3" d="M60.22369452 14.09588889c.08769317.19496398.11059906.41289936.0653575.62183537l-2.04128505 9.42649376 9.74451043 3.13171892c.52581225.16893785.81511605.732144.6461782 1.25795625-.06381661.19862653-.18815797.37232022-.3556113.49675681l-5.26787819 3.91383974 3.35160946 3.6062058c.37604758.40448323.35299599 1.03722842-.05148724 1.413276-.16467872.1531015-.37615027.24623477-.60027187.26436304l-8.62102762.69660495.0996039 12.67690775c.00429525.55226806-.43992441 1.00345179-.99219247 1.00774705-.22542404.00175328-.44482731-.07271234-.62261436-.21131553l-6.86736387-5.35429845-1.7937028 3.23015067c-.26818185.4828012-.87697388.65678455-1.359775.38860277-.19063406-.1058917-.34142876-.27119575-.42941118-.47072897l-2.4174445-5.4836632-10.79453279 3.88038843c-.5197331.1868045-1.092495-.08308745-1.27929943-.60282063-.07529005-.20947412-.07853783-.43808058-.00922889-.64960902l3.3289515-10.15954227-6.60227544-1.37771669c-.54062407-.11288954-.88737133-.642667-.77448173-1.18329115.04457444-.21346543.15770525-.40650931.32215746-.54972201l5.155653-4.49150471-5.12128074-7.20910418c-.31985639-.45023362-.2141648-1.07451498.23606882-1.39437136.17159454-.12190484.37728032-.18655518.58776122-.18474288l8.00953648.0679663-.99334966-7.6792362c-.0708991-.54771506.31563654-1.04920096.86335153-1.12009998.22299314-.02886545.4492071.01826528.64211866.13378254l7.82556673 4.68570487 5.13464294-7.57888954c.30973535-.45725545.93150411-.5768441 1.38875956-.26710875.19251387.13040485.33356662.32382099.39889535.5469783l1.95549066 6.67876758 5.91610142-2.66006736c.50367962-.22655087 1.09564839-.00189366 1.32219931.50178598z"/>
@@ -74,109 +74,106 @@ const getLocalStorage = (key) => {
 
 const burritoHost = window.location.hostname;
 
-let listType = getLocalStorage('listType') || 'to';
-let scoreType = getLocalStorage('scoreType') || 'inc';
-let userType = getLocalStorage('userType') || 'member';
+let listType = getLocalStorage("listType") || "to";
+let scoreType = getLocalStorage("scoreType") || "inc";
+let userType = getLocalStorage("userType") || "member";
 
-const filteraSwitch = document.getElementById('switchToFromInput');
-const filterbSwitch = document.getElementById('switchTypeInput');
-const filtercSwitch = document.getElementById('switchUserTypesInput');
+const filteraSwitch = document.getElementById("switchToFromInput");
+const filterbSwitch = document.getElementById("switchTypeInput");
+const filtercSwitch = document.getElementById("switchUserTypesInput");
 
-filteraSwitch.checked = (listType === 'to' ) ? true : false;;
-filterbSwitch.checked = (scoreType === 'inc' ) ? true : false;
-filtercSwitch.checked = (userType === 'member' ) ? true : false;
+filteraSwitch.checked = listType === "to" ? true : false;
+filterbSwitch.checked = scoreType === "inc" ? true : false;
+filtercSwitch.checked = userType === "member" ? true : false;
 
-async function fetcher (type, {username,listType, scoreType}) {
+async function fetcher(type, { username, listType, scoreType }) {
     switch (type) {
-    case 'scoreboard':
-        const res = await fetch(`/api/scoreboard/${listType}/${scoreType}`);
-        const json = await res.json();
-        return json.data;
-        break;
-    case 'userStats':
-        const res1 = await fetch(`/api/userstats/${username}`);
-        const json1 = await res1.json();
-        return json1.data;
-        break;
-    case 'userScore':
-        const res2 = await fetch(`/api/userscore/${username}/${listType}/${scoreType}`);
-        const json2 = await res2.json();
-        const {data} = json2;
-        return json2;
-        break;
+        case "scoreboard":
+            const res = await fetch(`/api/scoreboard/${listType}/${scoreType}`);
+            const json = await res.json();
+            return json.data;
+            break;
+        case "userStats":
+            const res1 = await fetch(`/api/userstats/${username}`);
+            const json1 = await res1.json();
+            return json1.data;
+            break;
+        case "userScore":
+            const res2 = await fetch(
+                `/api/userscore/${username}/${listType}/${scoreType}`
+            );
+            const json2 = await res2.json();
+            const { data } = json2;
+            return json2;
+            break;
     }
+}
 
-};
-
-const getScoreBoard = async() => {
-    store = await fetcher('scoreboard',{listType, scoreType});
+const getScoreBoard = async () => {
+    store = await fetcher("scoreboard", { listType, scoreType });
     sortUsers();
     render();
 };
 
 getScoreBoard();
 
-
-
-filteraSwitch.addEventListener('click', async (ev) => {
-    const list = (listType === 'to') ? 'from' : 'to';
+filteraSwitch.addEventListener("click", async (ev) => {
+    const list = listType === "to" ? "from" : "to";
     listType = list;
-    setLocalStorage('listType',list);
+    setLocalStorage("listType", list);
 
-    store = await fetcher('scoreboard',{listType, scoreType});
+    store = await fetcher("scoreboard", { listType, scoreType });
     sortUsers();
     render();
 });
 
-filterbSwitch.addEventListener('click', async (ev) => {
-    const score = (scoreType === 'inc') ? 'dec' : 'inc';
+filterbSwitch.addEventListener("click", async (ev) => {
+    const score = scoreType === "inc" ? "dec" : "inc";
     scoreType = score;
-    setLocalStorage('scoreType',score);
-    store = await fetcher('scoreboard',{listType, scoreType});
+    setLocalStorage("scoreType", score);
+    store = await fetcher("scoreboard", { listType, scoreType });
     sortUsers();
     render();
 });
 
-filtercSwitch.addEventListener('click', async (ev) => {
-    const memberType = (userType === 'member') ? 'all' : 'member';
+filtercSwitch.addEventListener("click", async (ev) => {
+    const memberType = userType === "member" ? "all" : "member";
     userType = memberType;
-    setLocalStorage('userType',memberType);
-    store = await fetcher('scoreboard',{listType, scoreType});
+    setLocalStorage("userType", memberType);
+    store = await fetcher("scoreboard", { listType, scoreType });
     sortUsers();
     render();
 });
-
-
 
 function sortUsers(sort = false) {
-
     let data;
 
-    if(userType === 'member'){
-        data = store.filter(item => item.memberType === userType);
-    }else{
+    if (userType === "member") {
+        data = store.filter((item) => item.memberType === userType);
+    } else {
         data = store;
     }
 
-    if(sort) data.sort((a, b) => Math.sign(b.score - a.score));
+    if (sort) data.sort((a, b) => Math.sign(b.score - a.score));
 
     store = data.map((item, i) => {
-            const mappedItem = Object.assign({}, item);
-            const position = i + 1;
+        const mappedItem = Object.assign({}, item);
+        const position = i + 1;
 
-            mappedItem.last_position = ('position' in mappedItem) ? mappedItem.position : 0;
-            mappedItem.position = position;
+        mappedItem.last_position =
+            "position" in mappedItem ? mappedItem.position : 0;
+        mappedItem.position = position;
 
-            return mappedItem;
+        return mappedItem;
     });
 }
 
 function displayItem(element, wait, rerender) {
     setTimeout(() => {
-        element.classList.add('display');
+        element.classList.add("display");
 
         setTimeout(() => {
-            element.classList.add('displayed');
+            element.classList.add("displayed");
 
             if (rerender) {
                 setTimeout(() => {
@@ -189,13 +186,13 @@ function displayItem(element, wait, rerender) {
 }
 
 async function displayStats(data, element) {
-    const statsEl = element.querySelector('.scoreboard__user__stats');
+    const statsEl = element.querySelector(".scoreboard__user__stats");
 
-    if (statsEl.classList.contains('display')) {
-        statsEl.style.cssText = 'height: 0px';
-        statsEl.classList.remove('display');
+    if (statsEl.classList.contains("display")) {
+        statsEl.style.cssText = "height: 0px";
+        statsEl.classList.remove("display");
     } else {
-        const res = await fetcher("userStats", {username: data.username});
+        const res = await fetcher("userStats", { username: data.username });
         addStats(res);
     }
 }
@@ -212,11 +209,12 @@ function addStatsRow(user, container) {
         </li>
     `;
 
-    container.appendChild(document.createRange().createContextualFragment(html));
+    container.appendChild(
+        document.createRange().createContextualFragment(html)
+    );
 }
 
 function addUserInfo(user, container) {
-
     const html = `
 <div class="scoreboard__user__stats__column" >
 
@@ -252,28 +250,27 @@ function addUserInfo(user, container) {
 }
 function addStats(data) {
     const element = document.getElementById(`user:${data.user.username}`);
-    const statsEl = element.querySelector('[data-stats]');
-    const infoEl = element.querySelector('[data-info]');
-    const todayFromEl = element.querySelector('[data-today-from]');
-    const todayToEl = element.querySelector('[data-today-to]');
+    const statsEl = element.querySelector("[data-stats]");
+    const infoEl = element.querySelector("[data-info]");
+    const todayFromEl = element.querySelector("[data-today-from]");
+    const todayToEl = element.querySelector("[data-today-to]");
 
-    const fromEl = element.querySelector('[data-from]');
-    const toEl = element.querySelector('[data-to]');
+    const fromEl = element.querySelector("[data-from]");
+    const toEl = element.querySelector("[data-to]");
 
-    fromEl.innerHTML = '';
-    toEl.innerHTML = '';
-    todayFromEl.innerHTML = '';
-    todayToEl.innerHTML = '';
+    fromEl.innerHTML = "";
+    toEl.innerHTML = "";
+    todayFromEl.innerHTML = "";
+    todayToEl.innerHTML = "";
 
-    addUserInfo(data.user,infoEl);
-    if(data.givenToday){
-        data.givenToday.forEach((user) => addStatsRow(user,todayToEl));
+    addUserInfo(data.user, infoEl);
+    if (data.givenToday) {
+        data.givenToday.forEach((user) => addStatsRow(user, todayToEl));
     }
 
-    if(data.receivedToday){
-        data.receivedToday.forEach((user) => addStatsRow(user,todayFromEl));
+    if (data.receivedToday) {
+        data.receivedToday.forEach((user) => addStatsRow(user, todayFromEl));
     }
-
 
     if (data.given) {
         data.given.forEach((user) => addStatsRow(user, toEl));
@@ -284,7 +281,7 @@ function addStats(data) {
     }
 
     requestAnimationFrame(() => {
-        statsEl.classList.add('display');
+        statsEl.classList.add("display");
         statsEl.style.cssText = `
             position: absolute;
             left: 0;
@@ -296,7 +293,7 @@ function addStats(data) {
         requestAnimationFrame(() => {
             const height = statsEl.getBoundingClientRect().height;
 
-            statsEl.style.cssText = '';
+            statsEl.style.cssText = "";
 
             requestAnimationFrame(() => {
                 statsEl.style.cssText = `height: ${height}px`;
@@ -305,19 +302,19 @@ function addStats(data) {
     });
 }
 
-const level = (l) => Array(l).fill(burrito).join(' ');
+const level = (l) => Array(l).fill(burrito).join(" ");
 
 function createElement(data, display) {
-    const element = document.createElement('article');
-    element.className = 'scoreboard__user';
+    const element = document.createElement("article");
+    element.className = "scoreboard__user";
     element.id = `user:${data.username}`;
 
     if (display) {
-        element.className += ' display';
+        element.className += " display";
     }
 
-    element.setAttribute('data-uuid', data.username);
-    element.setAttribute('data-score', data.score);
+    element.setAttribute("data-uuid", data.username);
+    element.setAttribute("data-score", data.score);
 
     element.innerHTML = `
  <div class="scoreboard__user__row scoreboard__user__summary">
@@ -327,7 +324,9 @@ function createElement(data, display) {
     <img class="avatar" width="48" height="48" src="${data.avatar}" alt="">
   </div>
   <div class="displayname">${data.name}
-<span data-element="level" class="level">${data.level ? level(data.level) : ''}</span>
+<span data-element="level" class="level">${
+        data.level ? level(data.level) : ""
+    }</span>
 </div>
   <div><span data-element="score" class="score">${data.score}</span></div>
 </div>
@@ -372,16 +371,18 @@ function createElement(data, display) {
 </div>
     `;
 
-    element.querySelector('.scoreboard__user__summary').addEventListener('click', () => displayStats(data, element), false);
+    element
+        .querySelector(".scoreboard__user__summary")
+        .addEventListener("click", () => displayStats(data, element), false);
     return element;
 }
 
 function newPosition(element) {
-    const newClass = ' pulse animated';
+    const newClass = " pulse animated";
     element.className += newClass;
 
     setTimeout(() => {
-        element.className = element.className.replace(newClass, '').trim();
+        element.className = element.className.replace(newClass, "").trim();
     }, 1000);
 }
 
@@ -389,8 +390,8 @@ function render(refresh) {
     const wait = 200;
     let currentWait = 0;
 
-    users.innerHTML = '';
-    const top20 = store.slice(0,20);
+    users.innerHTML = "";
+    const top20 = store.slice(0, 20);
     store.forEach((item) => {
         currentWait += wait;
 
@@ -417,12 +418,13 @@ function appendUser(data) {
     displayItem(element, 200, true);
 }
 
-function updateUser(data, direction, item,burritoType) {
+function updateUser(data, direction, item, burritoType) {
     const score = data.score;
     const scoreEl = item.querySelector('[data-element="score"]');
-    const className = (direction === 'up') ? ' tada animated good' : ' shake animated bad';
+    const className =
+        direction === "up" ? " tada animated good" : " shake animated bad";
 
-    item.setAttribute('data-score', score);
+    item.setAttribute("data-score", score);
     scoreEl.innerHTML = score;
 
     let scoreUpdated = false;
@@ -442,55 +444,62 @@ function updateUser(data, direction, item,burritoType) {
         scoreEl.className += className;
 
         setTimeout(() => {
-            scoreEl.className = scoreEl.className.replace(className, '').trim();
+            scoreEl.className = scoreEl.className.replace(className, "").trim();
             setTimeout(() => {
                 sortUsers(true);
                 render(true);
             }, 1500);
         }, 1000);
     }
-
 }
 
-function updateScore(data, direction,burritoType) {
+function updateScore(data, direction, burritoType) {
     const item = document.querySelector(`[data-uuid="${data.username}"]`);
 
     if (item) {
-        updateUser(data, direction, item,burritoType);
+        updateUser(data, direction, item, burritoType);
     } else {
-        appendUser(data,burritoType);
+        appendUser(data, burritoType);
     }
 }
 
-hey.on('GIVE', async (input) => {
+hey.on("GIVE", async (input) => {
     const username = input[listType];
-    const {data} = await fetcher('userScore', {username, listType, scoreType});
-    const direction = (data.scoreType === 'inc') ? 'up' : 'down';
-    const burritoType = (data.scoreType === 'inc') ? 'burrito': 'rottenburrito';
-    updateScore(data, direction,burritoType);
-
+    const { data } = await fetcher("userScore", {
+        username,
+        listType,
+        scoreType,
+    });
+    const direction = data.scoreType === "inc" ? "up" : "down";
+    const burritoType = data.scoreType === "inc" ? "burrito" : "rottenburrito";
+    updateScore(data, direction, burritoType);
 });
 
-hey.on('TAKE_AWAY', async (input) => {
+hey.on("TAKE_AWAY", async (input) => {
     const username = input[listType];
-    const {data} = await fetcher('userScore', {username, listType, scoreType});
-    const direction = (data.scoreType === 'inc') ? 'up' : 'down';
-    const burritoType = (data.scoreType === 'inc') ? 'burrito': 'rottenburrito';
-    updateScore(data, direction,burritoType);
+    const { data } = await fetcher("userScore", {
+        username,
+        listType,
+        scoreType,
+    });
+    const direction = data.scoreType === "inc" ? "up" : "down";
+    const burritoType = data.scoreType === "inc" ? "burrito" : "rottenburrito";
+    updateScore(data, direction, burritoType);
 });
 
-
-
-function rainBurritos(type){
-
-    const burritoType = (type === 'burrito') ? `<i class="rain burrito-rain">${burrito}</i>`: `<i class="rain burrito-rain">${rottenburrito}</i>`;
+function rainBurritos(type) {
+    const burritoType =
+        type === "burrito"
+            ? `<i class="rain burrito-rain">${burrito}</i>`
+            : `<i class="rain burrito-rain">${rottenburrito}</i>`;
     for (i = 0; i < 50; i++) {
-        document.getElementById("rain").innerHTML+= burritoType;
+        document.getElementById("rain").innerHTML += burritoType;
     }
 
     setTimeout(() => {
-        var i, elements = document.getElementsByClassName('rain');
-        for (i = elements.length; i--;) {
+        var i,
+            elements = document.getElementsByClassName("rain");
+        for (i = elements.length; i--; ) {
             elements[i].parentNode.removeChild(elements[i]);
         }
     }, 15000);
