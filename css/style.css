@@ -422,6 +422,7 @@ h1 {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     padding-bottom: 10px;
     overflow: hidden;
   }
