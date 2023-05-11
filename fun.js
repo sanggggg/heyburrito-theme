@@ -203,9 +203,7 @@ function addStatsRow(user, container) {
             <img class="avatar" width="30" height="30" src="${user.avatar}">
             <strong>${user.name}</strong>
             <span class="score mini good">${user.scoreinc}&nbsp;&nbsp;&nbsp;</span>
-            <span class="score mini overdrawn">${user.scoreincOverdrawn}&nbsp;&nbsp;&nbsp;</span>
             <span class="score mini bad">${user.scoredec}&nbsp;&nbsp;&nbsp;</span>
-            <span class="score mini overdrawn">${user.scoredecOverdrawn}</span>
         </li>
     `;
 
